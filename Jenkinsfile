@@ -1,9 +1,14 @@
 pipeline {
-    agent { docker 'node:6.3' }
+    agent any
+
+    parameters {
+        booleanParam(defaultValue: true, description: '', name: 'userFlag')
+    }
+
     stages {
-        stage('build') {
+        stage("foo") {
             steps {
-                sh 'npm --version'
+                echo "flag: ${params.userFlag}"
             }
         }
     }
