@@ -30,12 +30,6 @@ pipeline {
   }
   
   stages {
-    stage('Checkout') {
-        steps{
-            echo "Checking out from visualstudio"
-            git 'ssh://apcsmartconnect.visualstudio.com:22/_git/APCSmartConnect'
-        }
-    }
     // At least one stage is required.
     stage("first stage") {
       // Every stage must have a steps block containing at least one step.
